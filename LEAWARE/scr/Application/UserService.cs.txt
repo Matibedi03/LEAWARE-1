@@ -1,0 +1,14 @@
+using Domain;
+
+namespace Application;
+
+public class UserService
+{
+    public User CreateUser(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("Name cannot be empty");
+
+        return new User { Name = name };
+    }
+}
